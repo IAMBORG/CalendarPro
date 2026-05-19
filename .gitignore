@@ -1,0 +1,27 @@
+# build artifacts
+/dist/
+/.tmp
+webpack.statistics.dev.html
+webpack.statistics.prod.html
+eslint-report.json
+*.tsbuildinfo
+
+# dependencies
+/node_modules
+
+# editors / IDEs
+/.vscode
+/.idea
+
+# Claude session data (worktrees, settings, memory) — NEVER commit
+/.claude
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+
+# scratch / WIP copies
+/src/components/*copy.tsx

@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "target": "es6",
+        "sourceMap": true,
+        "outDir": "./.tmp/build",
+        "rootDir": ".",
+        "module": "nodenext",
+        "declaration": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "jsx": "react-jsx",
+        "types": [
+            "react",
+            "react-dom",
+            "node"
+        ],
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/types"
+        ]
+    },
+    "files": [
+        "./src/calendarPro.tsx",
+        "./src/optionsMapper.tsx",
+        "./src/reactUtils.tsx"
+    ],
+    "include": [
+        "src",
+        "src/languages/enAU.ts",
+        "src/types/images.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        ".tmp",
+        ".tmp/**",
+        ".tmp/build"
+    ]
+}

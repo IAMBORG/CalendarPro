@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafbfc"/>
+      <stop offset="100%" stop-color="#eef1f4"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f7f9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F2C811"/>
+      <stop offset="100%" stop-color="#E0A800"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#F2C811" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#F2C811" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#F2C811" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadowLg" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="8" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#252423" stroke-width="1">
+    <path d="M0 80 H1280 M0 160 H1280 M0 240 H1280 M0 320 H1280 M0 400 H1280 M0 480 H1280 M0 560 H1280 M0 640 H1280"/>
+    <path d="M80 0 V720 M160 0 V720 M240 0 V720 M320 0 V720 M400 0 V720 M480 0 V720 M560 0 V720 M640 0 V720 M720 0 V720 M800 0 V720 M880 0 V720 M960 0 V720 M1040 0 V720 M1120 0 V720 M1200 0 V720"/>
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(60, 50)">
+    <text x="0" y="0" font-size="40" font-weight="700" fill="#252423">Smart Date Defaults</text>
+    <text x="0" y="32" font-size="18" font-weight="400" fill="#605e5c">Opens pre-filtered to today, or to the latest date in your data — no clicks required.</text>
+  </g>
+
+  <!-- Power BI badge top-right -->
+  <g transform="translate(1100, 50)">
+    <rect x="-20" y="-25" width="130" height="40" rx="20" fill="#252423"/>
+    <circle cx="0" cy="-5" r="8" fill="#F2C811"/>
+    <text x="14" y="0" font-size="13" font-weight="600" fill="#ffffff">Power BI Visual</text>
+  </g>
+
+  <!-- "One of a Kind" star badge -->
+  <g transform="translate(640, 130)">
+    <g transform="rotate(-6)">
+      <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#252423"/>
+      <text x="0" y="5" font-size="13" font-weight="700" fill="#F2C811" text-anchor="middle" letter-spacing="1">★ ONE OF A KIND IN APPSOURCE ★</text>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- LEFT COLUMN: "OTHER VISUALS" comparison -->
+  <!-- ============================================================ -->
+  <g transform="translate(60, 200)">
+    <rect x="0" y="0" width="280" height="340" rx="14" fill="url(#card)" stroke="#d2d0ce" stroke-width="1" filter="url(#shadow)"/>
+
+    <!-- header strip -->
+    <rect x="0" y="0" width="280" height="44" rx="14" fill="#e5e3e1"/>
+    <rect x="0" y="30" width="280" height="14" fill="#e5e3e1"/>
+    <text x="140" y="28" font-size="13" font-weight="700" fill="#605e5c" text-anchor="middle" letter-spacing="2">OTHER DATE SLICERS</text>
+
+    <!-- generic slicer mock -->
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" font-size="13" font-weight="600" fill="#252423">On report open:</text>
+
+      <!-- Empty/all-time state -->
+      <g transform="translate(0, 25)">
+        <rect x="0" y="0" width="240" height="70" rx="8" fill="#ffffff" stroke="#c8c6c4" stroke-dasharray="3 3"/>
+        <text x="120" y="35" font-size="14" font-weight="500" fill="#a19f9d" text-anchor="middle">All dates · No filter</text>
+        <text x="120" y="55" font-size="11" fill="#a19f9d" text-anchor="middle">(or whatever was saved)</text>
+      </g>
+
+      <!-- Pain points -->
+      <g transform="translate(0, 130)" fill="#605e5c">
+        <g>
+          <circle cx="6" cy="6" r="5" fill="none" stroke="#d13438" stroke-width="2"/>
+          <line x1="3" y1="3" x2="9" y2="9" stroke="#d13438" stroke-width="2"/>
+          <line x1="9" y1="3" x2="3" y2="9" stroke="#d13438" stroke-width="2"/>
+          <text x="20" y="11" font-size="12">User scrolls to find today</text>
+        </g>
+        <g transform="translate(0, 22)">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="#d13438" stroke-width="2"/>
+          <line x1="3" y1="3" x2="9" y2="9" stroke="#d13438" stroke-width="2"/>
+          <line x1="9" y1="3" x2="3" y2="9" stroke="#d13438" stroke-width="2"/>
+          <text x="20" y="11" font-size="12">Saved filter goes stale</text>
+        </g>
+        <g transform="translate(0, 44)">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="#d13438" stroke-width="2"/>
+          <line x1="3" y1="3" x2="9" y2="9" stroke="#d13438" stroke-width="2"/>
+          <line x1="9" y1="3" x2="3" y2="9" stroke="#d13438" stroke-width="2"/>
+          <text x="20" y="11" font-size="12">Manual click every time</text>
+        </g>
+        <g transform="translate(0, 66)">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="#d13438" stroke-width="2"/>
+          <line x1="3" y1="3" x2="9" y2="9" stroke="#d13438" stroke-width="2"/>
+          <line x1="9" y1="3" x2="3" y2="9" stroke="#d13438" stroke-width="2"/>
+          <text x="20" y="11" font-size="12">Can't follow new data</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Arrow between columns -->
+  <g transform="translate(360, 370)">
+    <text x="0" y="-10" font-size="11" font-weight="600" fill="#605e5c" text-anchor="middle">VS</text>
+    <line x1="-12" y1="0" x2="12" y2="0" stroke="#F2C811" stroke-width="3"/>
+    <polygon points="12,0 5,-5 5,5" fill="#F2C811"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- CENTER: Calendar Pro showing today's auto-filled range -->
+  <!-- ============================================================ -->
+  <g transform="translate(640, 370)">
+    <circle cx="0" cy="0" r="190" fill="url(#glow)"/>
+  </g>
+
+  <g transform="translate(400, 200)" filter="url(#shadowLg)">
+    <rect x="0" y="0" width="480" height="340" rx="14" fill="url(#card)" stroke="#F2C811" stroke-width="2"/>
+    <!-- accent strip -->
+    <rect x="0" y="0" width="480" height="6" rx="3" fill="url(#accent)"/>
+
+    <!-- header -->
+    <text x="240" y="42" font-size="18" font-weight="700" fill="#252423" text-anchor="middle">Calendar Pro · auto-applied on open</text>
+    <text x="240" y="64" font-size="12" fill="#605e5c" text-anchor="middle">Today is May 19, 2026 · Start Range: Last 8 Days</text>
+
+    <!-- date inputs with auto-applied glow -->
+    <g transform="translate(60, 100)">
+      <!-- start date pill -->
+      <rect x="-3" y="-3" width="156" height="44" rx="8" fill="#F2C811" opacity="0.2"/>
+      <rect x="0" y="0" width="150" height="38" rx="6" fill="#ffffff" stroke="#F2C811" stroke-width="2"/>
+      <text x="14" y="24" font-size="16" font-weight="600" fill="#252423">05/12/2026</text>
+      <rect x="118" y="9" width="20" height="20" rx="2" fill="none" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="118" y1="14" x2="138" y2="14" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="124" y1="6" x2="124" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="132" y1="6" x2="132" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+
+      <!-- arrow -->
+      <line x1="170" y1="19" x2="200" y2="19" stroke="#F2C811" stroke-width="3"/>
+      <polygon points="200,19 193,15 193,23" fill="#F2C811"/>
+
+      <!-- end date pill (TODAY) -->
+      <g transform="translate(220, 0)">
+        <rect x="-3" y="-3" width="156" height="44" rx="8" fill="#F2C811" opacity="0.2"/>
+        <rect x="0" y="0" width="150" height="38" rx="6" fill="#ffffff" stroke="#F2C811" stroke-width="2"/>
+        <text x="14" y="24" font-size="16" font-weight="600" fill="#252423">05/19/2026</text>
+        <rect x="118" y="9" width="20" height="20" rx="2" fill="none" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="118" y1="14" x2="138" y2="14" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="124" y1="6" x2="124" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="132" y1="6" x2="132" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+      </g>
+      <!-- TODAY pill -->
+      <g transform="translate(290, -22)">
+        <rect x="0" y="0" width="74" height="20" rx="10" fill="#F2C811"/>
+        <text x="37" y="14" font-size="11" font-weight="700" fill="#252423" text-anchor="middle">↓ TODAY</text>
+      </g>
+    </g>
+
+    <!-- "auto-applied" stamp -->
+    <g transform="translate(240, 180)">
+      <rect x="-100" y="-16" width="200" height="32" rx="16" fill="#252423"/>
+      <text x="0" y="5" font-size="13" font-weight="700" fill="#F2C811" text-anchor="middle">✓ FILTER APPLIED ON OPEN</text>
+    </g>
+
+    <!-- Settings preview -->
+    <g transform="translate(40, 230)">
+      <text x="0" y="0" font-size="12" font-weight="700" fill="#605e5c" letter-spacing="1">FORMAT PANE → CALENDAR SETTINGS</text>
+      <g transform="translate(0, 16)">
+        <rect x="0" y="0" width="400" height="78" rx="8" fill="#fafbfc" stroke="#e5e3e1"/>
+        <text x="14" y="22" font-size="12" fill="#252423">Force Startup Range</text>
+        <g transform="translate(360, 14)">
+          <rect x="0" y="0" width="26" height="14" rx="7" fill="#F2C811"/>
+          <circle cx="19" cy="7" r="6" fill="#ffffff"/>
+        </g>
+        <text x="14" y="46" font-size="12" fill="#252423">Start Range</text>
+        <text x="386" y="46" font-size="12" font-weight="600" fill="#252423" text-anchor="end">Last 8 Days ▾</text>
+        <text x="14" y="68" font-size="12" fill="#252423">— or — Last Date of Scope, Today, YTD…</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT COLUMN: feature list -->
+  <!-- ============================================================ -->
+  <g transform="translate(940, 200)">
+    <rect x="0" y="0" width="280" height="340" rx="14" fill="url(#card)" stroke="#d2d0ce" stroke-width="1" filter="url(#shadow)"/>
+
+    <!-- header strip -->
+    <rect x="0" y="0" width="280" height="44" rx="14" fill="#fff4cc"/>
+    <rect x="0" y="30" width="280" height="14" fill="#fff4cc"/>
+    <text x="140" y="28" font-size="13" font-weight="700" fill="#7a5a00" text-anchor="middle" letter-spacing="2">CALENDAR PRO</text>
+
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" font-size="13" font-weight="600" fill="#252423">Default options on load:</text>
+
+      <!-- TODAY -->
+      <g transform="translate(0, 24)" filter="url(#shadow)">
+        <rect x="0" y="0" width="240" height="46" rx="8" fill="#ffffff" stroke="#F2C811"/>
+        <circle cx="22" cy="23" r="13" fill="#F2C811" opacity="0.25"/>
+        <text x="22" y="28" font-size="13" font-weight="700" fill="#252423" text-anchor="middle">T</text>
+        <text x="44" y="20" font-size="13" font-weight="600" fill="#252423">Today</text>
+        <text x="44" y="36" font-size="10" fill="#605e5c">always current</text>
+      </g>
+
+      <!-- LAST DATE OF SCOPE -->
+      <g transform="translate(0, 80)" filter="url(#shadow)">
+        <rect x="0" y="0" width="240" height="46" rx="8" fill="#ffffff" stroke="#F2C811"/>
+        <circle cx="22" cy="23" r="13" fill="#F2C811" opacity="0.25"/>
+        <g transform="translate(15, 14)" stroke="#252423" stroke-width="1.5" fill="none">
+          <ellipse cx="7" cy="2" rx="7" ry="2"/>
+          <path d="M0 2 V11 C0 12, 3 14, 7 14 C11 14, 14 12, 14 11 V2"/>
+          <path d="M0 6 C0 7, 3 9, 7 9 C11 9, 14 7, 14 6"/>
+        </g>
+        <text x="44" y="20" font-size="13" font-weight="600" fill="#252423">Last Date of Scope</text>
+        <text x="44" y="36" font-size="10" fill="#605e5c">follows your data</text>
+      </g>
+
+      <!-- DAYS FROM TODAY -->
+      <g transform="translate(0, 136)" filter="url(#shadow)">
+        <rect x="0" y="0" width="240" height="46" rx="8" fill="#ffffff" stroke="#F2C811"/>
+        <circle cx="22" cy="23" r="13" fill="#F2C811" opacity="0.25"/>
+        <text x="22" y="28" font-size="12" font-weight="700" fill="#252423" text-anchor="middle">5-8</text>
+        <text x="44" y="20" font-size="13" font-weight="600" fill="#252423">Last N Days</text>
+        <text x="44" y="36" font-size="10" fill="#605e5c">rolling window</text>
+      </g>
+
+      <!-- YTD / This Month / Quarter / Year -->
+      <g transform="translate(0, 192)" filter="url(#shadow)">
+        <rect x="0" y="0" width="240" height="46" rx="8" fill="#ffffff" stroke="#F2C811"/>
+        <circle cx="22" cy="23" r="13" fill="#F2C811" opacity="0.25"/>
+        <text x="22" y="28" font-size="11" font-weight="700" fill="#252423" text-anchor="middle">YTD</text>
+        <text x="44" y="20" font-size="13" font-weight="600" fill="#252423">YTD · Month · Quarter</text>
+        <text x="44" y="36" font-size="10" fill="#605e5c">period to date</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Footer / tagline -->
+  <!-- ============================================================ -->
+  <g transform="translate(640, 596)" text-anchor="middle">
+    <text x="0" y="0" font-size="15" font-weight="700" fill="#252423">First click = task done</text>
+    <text x="0" y="22" font-size="13" fill="#605e5c">Report opens · Calendar Pro detects today · Filter is already applied · Data is ready</text>
+  </g>
+
+  <!-- Bottom strip / brand bar -->
+  <g transform="translate(0, 660)">
+    <rect x="0" y="0" width="1280" height="60" fill="#252423"/>
+    <text x="60" y="38" font-size="15" font-weight="500" fill="#ffffff">Calendar Pro</text>
+    <text x="180" y="38" font-size="13" font-weight="400" fill="#a19f9d">© 2026 Chuck Nemeth · MIT License</text>
+    <text x="1220" y="38" font-size="13" font-weight="500" fill="#F2C811" text-anchor="end">Microsoft AppSource</text>
+  </g>
+</svg>

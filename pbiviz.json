@@ -1,0 +1,25 @@
+{
+    "visual": {
+        "name": "calendarPro",
+        "displayName": "Calendar Pro",
+        "guid": "CalendarProC1C152554D75E8F99A5382304B7E4AC0",
+        "visualClassName": "CalendarPro",
+        "version": "2026.5.19.20",
+        "description": "Date Range Selector",
+        "supportUrl": "https://github.com/IAMBORG/CalendarPro/issues",
+        "gitHubUrl": "https://github.com/IAMBORG/CalendarPro"
+    },
+    "apiVersion": "5.11.0",
+    "author": {
+        "name": "Chuck Nemeth",
+        "email": "chuck.nemeth@hotmail.com"
+    },
+    "assets": {
+        "icon": "assets/icon80.png"
+    },
+    "capabilities": "capabilities.json",
+    "dependencies": null,
+    "stringResources": [
+        "stringResources/en-US/resources.resjson"
+    ]
+}

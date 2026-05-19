@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafbfc"/>
+      <stop offset="100%" stop-color="#eef1f4"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f7f9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F2C811"/>
+      <stop offset="100%" stop-color="#E0A800"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadowLg" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="8" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#252423" stroke-width="1">
+    <path d="M0 80 H1280 M0 160 H1280 M0 240 H1280 M0 320 H1280 M0 400 H1280 M0 480 H1280 M0 560 H1280 M0 640 H1280"/>
+    <path d="M80 0 V720 M160 0 V720 M240 0 V720 M320 0 V720 M400 0 V720 M480 0 V720 M560 0 V720 M640 0 V720 M720 0 V720 M800 0 V720 M880 0 V720 M960 0 V720 M1040 0 V720 M1120 0 V720 M1200 0 V720"/>
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(60, 50)">
+    <text x="0" y="0" font-size="40" font-weight="700" fill="#252423">Calendar Pro</text>
+    <text x="0" y="32" font-size="18" font-weight="400" fill="#605e5c">Date Range Selector for Power BI — granularity from days to years, in one control</text>
+  </g>
+
+  <!-- Power BI badge top-right -->
+  <g transform="translate(1100, 50)">
+    <rect x="-20" y="-25" width="130" height="40" rx="20" fill="#252423"/>
+    <circle cx="0" cy="-5" r="8" fill="#F2C811"/>
+    <text x="14" y="0" font-size="13" font-weight="600" fill="#ffffff">Power BI Visual</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- CENTERPIECE: Stylized Calendar Pro visual -->
+  <!-- ============================================================ -->
+  <g transform="translate(360, 230)" filter="url(#shadowLg)">
+    <!-- card -->
+    <rect x="0" y="0" width="560" height="280" rx="14" fill="url(#card)" stroke="#d2d0ce" stroke-width="1"/>
+    <!-- accent strip -->
+    <rect x="0" y="0" width="560" height="6" rx="3" fill="url(#accent)"/>
+
+    <!-- title -->
+    <text x="280" y="42" font-size="18" font-weight="600" fill="#252423" text-anchor="middle">Calendar Pro Date Selector</text>
+
+    <!-- date inputs row -->
+    <g transform="translate(80, 80)">
+      <!-- start date pill -->
+      <rect x="0" y="0" width="150" height="38" rx="6" fill="#ffffff" stroke="#c8c6c4" stroke-width="1"/>
+      <text x="14" y="24" font-size="16" font-weight="500" fill="#252423">09/01/2025</text>
+      <rect x="118" y="9" width="20" height="20" rx="2" fill="none" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="118" y1="14" x2="138" y2="14" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="124" y1="6" x2="124" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+      <line x1="132" y1="6" x2="132" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+
+      <!-- arrow between -->
+      <line x1="170" y1="19" x2="220" y2="19" stroke="#F2C811" stroke-width="3"/>
+      <polygon points="220,19 212,15 212,23" fill="#F2C811"/>
+
+      <!-- end date pill -->
+      <g transform="translate(240, 0)">
+        <rect x="0" y="0" width="150" height="38" rx="6" fill="#ffffff" stroke="#c8c6c4" stroke-width="1"/>
+        <text x="14" y="24" font-size="16" font-weight="500" fill="#252423">05/01/2026</text>
+        <rect x="118" y="9" width="20" height="20" rx="2" fill="none" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="118" y1="14" x2="138" y2="14" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="124" y1="6" x2="124" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+        <line x1="132" y1="6" x2="132" y2="12" stroke="#605e5c" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- Navigation arrows row -->
+    <g transform="translate(180, 158)" fill="#605e5c">
+      <text x="0" y="0" font-size="22" font-weight="600">«</text>
+      <text x="40" y="0" font-size="22" font-weight="600">‹</text>
+      <circle cx="98" cy="-9" r="5" fill="#F2C811"/>
+      <text x="140" y="0" font-size="22" font-weight="600">›</text>
+      <text x="180" y="0" font-size="22" font-weight="600">»</text>
+    </g>
+
+    <!-- Step granularity pills (D W M Q Y) -->
+    <g transform="translate(120, 190)">
+      <g>
+        <rect x="0" y="0" width="40" height="34" rx="6" fill="#F2C811"/>
+        <text x="20" y="22" font-size="14" font-weight="700" fill="#252423" text-anchor="middle">D</text>
+      </g>
+      <g transform="translate(50, 0)">
+        <rect x="0" y="0" width="40" height="34" rx="6" fill="none" stroke="#c8c6c4"/>
+        <text x="20" y="22" font-size="14" font-weight="600" fill="#605e5c" text-anchor="middle">W</text>
+      </g>
+      <g transform="translate(100, 0)">
+        <rect x="0" y="0" width="40" height="34" rx="6" fill="none" stroke="#c8c6c4"/>
+        <text x="20" y="22" font-size="14" font-weight="600" fill="#605e5c" text-anchor="middle">M</text>
+      </g>
+      <g transform="translate(150, 0)">
+        <rect x="0" y="0" width="40" height="34" rx="6" fill="none" stroke="#c8c6c4"/>
+        <text x="20" y="22" font-size="14" font-weight="600" fill="#605e5c" text-anchor="middle">Q</text>
+      </g>
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="40" height="34" rx="6" fill="none" stroke="#c8c6c4"/>
+        <text x="20" y="22" font-size="14" font-weight="600" fill="#605e5c" text-anchor="middle">Y</text>
+      </g>
+      <text x="260" y="22" font-size="12" fill="#605e5c">granularity</text>
+    </g>
+
+    <!-- Mini timeline strip -->
+    <g transform="translate(50, 250)">
+      <line x1="0" y1="0" x2="460" y2="0" stroke="#d2d0ce" stroke-width="2"/>
+      <circle cx="35" cy="0" r="6" fill="#F2C811" stroke="#252423" stroke-width="1.5"/>
+      <circle cx="385" cy="0" r="6" fill="#F2C811" stroke="#252423" stroke-width="1.5"/>
+      <line x1="35" y1="0" x2="385" y2="0" stroke="#F2C811" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- STAT CARDS — reflecting the 09/01/2025 → 05/01/2026 span -->
+  <!-- ============================================================ -->
+
+  <!-- Top-left card: 243 days -->
+  <g transform="translate(60, 220)" filter="url(#shadow)">
+    <rect x="0" y="0" width="240" height="100" rx="10" fill="url(#card)" stroke="#d2d0ce"/>
+    <text x="20" y="38" font-size="36" font-weight="700" fill="#252423">243</text>
+    <text x="20" y="60" font-size="13" font-weight="600" fill="#605e5c" letter-spacing="1.5">DAYS</text>
+    <text x="20" y="82" font-size="11" fill="#8a8886">in selected range</text>
+    <g transform="translate(180, 50)" fill="#F2C811">
+      <circle cx="0" cy="0" r="24" opacity="0.2"/>
+      <text x="0" y="6" font-size="20" font-weight="700" text-anchor="middle">d</text>
+    </g>
+  </g>
+
+  <!-- Top-right card: 9 months -->
+  <g transform="translate(980, 220)" filter="url(#shadow)">
+    <rect x="0" y="0" width="240" height="100" rx="10" fill="url(#card)" stroke="#d2d0ce"/>
+    <text x="20" y="38" font-size="36" font-weight="700" fill="#252423">9</text>
+    <text x="20" y="60" font-size="13" font-weight="600" fill="#605e5c" letter-spacing="1.5">MONTHS</text>
+    <text x="20" y="82" font-size="11" fill="#8a8886">Sep 2025 → May 2026</text>
+    <g transform="translate(180, 50)" fill="#F2C811">
+      <circle cx="0" cy="0" r="24" opacity="0.2"/>
+      <text x="0" y="6" font-size="20" font-weight="700" text-anchor="middle">M</text>
+    </g>
+  </g>
+
+  <!-- Bottom-left card: 35 weeks -->
+  <g transform="translate(60, 420)" filter="url(#shadow)">
+    <rect x="0" y="0" width="240" height="100" rx="10" fill="url(#card)" stroke="#d2d0ce"/>
+    <text x="20" y="38" font-size="36" font-weight="700" fill="#252423">35</text>
+    <text x="20" y="60" font-size="13" font-weight="600" fill="#605e5c" letter-spacing="1.5">WEEKS</text>
+    <text x="20" y="82" font-size="11" fill="#8a8886">configurable start day</text>
+    <g transform="translate(180, 50)" fill="#F2C811">
+      <circle cx="0" cy="0" r="24" opacity="0.2"/>
+      <text x="0" y="6" font-size="20" font-weight="700" text-anchor="middle">W</text>
+    </g>
+  </g>
+
+  <!-- Bottom-right card: 4 quarters -->
+  <g transform="translate(980, 420)" filter="url(#shadow)">
+    <rect x="0" y="0" width="240" height="100" rx="10" fill="url(#card)" stroke="#d2d0ce"/>
+    <text x="20" y="38" font-size="36" font-weight="700" fill="#252423">4</text>
+    <text x="20" y="60" font-size="13" font-weight="600" fill="#605e5c" letter-spacing="1.5">QUARTERS</text>
+    <text x="20" y="82" font-size="11" fill="#8a8886">Q3 2025 → Q2 2026</text>
+    <g transform="translate(180, 50)" fill="#F2C811">
+      <circle cx="0" cy="0" r="24" opacity="0.2"/>
+      <text x="0" y="6" font-size="20" font-weight="700" text-anchor="middle">Q</text>
+    </g>
+  </g>
+
+  <!-- Connecting lines from cards to centerpiece -->
+  <g stroke="#F2C811" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.5" fill="none">
+    <path d="M 300 270 Q 330 270, 360 280"/>
+    <path d="M 980 270 Q 950 270, 920 280"/>
+    <path d="M 300 470 Q 330 470, 360 460"/>
+    <path d="M 980 470 Q 950 470, 920 460"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Footer / feature list -->
+  <!-- ============================================================ -->
+  <g transform="translate(640, 600)" text-anchor="middle">
+    <text x="0" y="0" font-size="14" font-weight="600" fill="#252423" letter-spacing="0.5">
+      <tspan fill="#605e5c">DAY · WEEK · PAY PERIOD · MONTH · QUARTER · YEAR</tspan>
+    </text>
+    <text x="0" y="24" font-size="13" fill="#605e5c">
+      Preset ranges · Custom granularity · Light/Dark theme · Bookmarks · Sync filters
+    </text>
+  </g>
+
+  <!-- Bottom strip / brand bar -->
+  <g transform="translate(0, 660)">
+    <rect x="0" y="0" width="1280" height="60" fill="#252423"/>
+    <text x="60" y="38" font-size="15" font-weight="500" fill="#ffffff">Calendar Pro</text>
+    <text x="180" y="38" font-size="13" font-weight="400" fill="#a19f9d">© 2026 Chuck Nemeth · MIT License</text>
+    <text x="1220" y="38" font-size="13" font-weight="500" fill="#F2C811" text-anchor="end">Microsoft AppSource</text>
+  </g>
+</svg>
