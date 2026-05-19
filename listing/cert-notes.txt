@@ -1,0 +1,36 @@
+Calendar Pro is a free, MIT-licensed Power BI custom visual that provides a date range selector with multiple granularities (day, week, pay period, month, quarter, year) and smart preset ranges that auto-apply on report open.
+
+SOURCE CODE
+https://github.com/IAMBORG/CalendarPro
+Public repository, MIT license, no credentials required for review.
+
+TESTING THE VISUAL
+1. Open CalendarPro_Demo.pbix in Power BI Desktop. The dataset is synthetic Contoso-style fake data — no real customer information.
+2. The Calendar Pro visual is bound to the "Date" column of the Sales table.
+3. Use the date input pickers, navigation arrows, or step granularity pills (D / W / M / Q / Y) to filter the report.
+4. All other visuals on the page (pie charts, matrix, line chart) cross-filter in response to the date range.
+
+KEY BEHAVIORS TO VERIFY
+- Dropping a non-dateTime column displays a warning icon via host.displayWarningIcon with the message "Date field required".
+- Removing the data field returns to Power BI's default landing page (the visual cleanly unmounts its React tree).
+- Format pane properties are correctly gated by data presence.
+- Smart-default presets include Today, Last Date of Scope, Last N Days (5/6/7/8), Year-to-Date, This Quarter, This Month, Last Quarter, Last Month, etc.
+- Force Startup Range toggle auto-applies the selected preset on report open.
+
+TECHNICAL CONFIRMATIONS
+- pbiviz package --certification-audit: passes
+- External requests audit: 0 external requests found in the visual
+- No eval, Function, fetch, XMLHttpRequest, innerHTML in source code
+- All dependencies MIT-licensed; 0 npm audit vulnerabilities
+- 5 locales: en-AU, en-US, es-ES, fr-FR, nl-NL
+- No telemetry, no data collection, no network transmissions; runs entirely client-side
+
+ACCESSIBILITY
+- supportsKeyboardFocus: true (declared in capabilities.json) — keyboard navigation through interactive elements
+- Esc returns focus from inside the visual to the visual container (standard Power BI behavior)
+
+NO IN-APP PURCHASES, NO LICENSE KEYS, NO TEST ACCOUNTS REQUIRED
+The visual is free, fully open source, and requires no activation, license validation, or external service to function.
+
+CONTACT
+chuck.nemeth@hotmail.com
