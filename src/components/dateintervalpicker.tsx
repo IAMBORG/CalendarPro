@@ -256,7 +256,7 @@ const DateIntervalPicker: React.FC<DateIntervalPickerProps> = ({
           </div>
         </ClickAwayListener>
       </Popover>
-      <div onClick={handleClick} onContextMenu={handleClick}>
+      <div onClick={handleClick}>
         {children}
       </div>
     </>

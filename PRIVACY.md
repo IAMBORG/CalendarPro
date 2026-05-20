@@ -93,7 +93,7 @@ this Privacy Policy.
 
 For questions about this Privacy Policy, please contact:
 
-- **Email:** chuck.nemeth@hotmail.com
+- **Email:** support@cmnengineering.com
 - **GitHub Issues:** [https://github.com/IAMBORG/CalendarPro/issues](https://github.com/IAMBORG/CalendarPro/issues)
 
 ## Governing Considerations

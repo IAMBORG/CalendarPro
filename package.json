@@ -1,7 +1,7 @@
 {
   "name": "visual",
   "description": "Calendar Pro — a Power BI date range selector with multiple granularities (day, week, pay period, month, quarter, year) and preset ranges (today, last week, this month, YTD, etc.)",
-  "version": "2026.5.18",
+  "version": "2026.5.20",
   "repository": {
     "type": "git",
     "url": "https://github.com/IAMBORG/CalendarPro"

@@ -11,6 +11,7 @@ import EnumerateVisualObjectInstancesOptions = powerbi.EnumerateVisualObjectInst
 import IVisualEventService = powerbi.extensibility.IVisualEventService;
 import ILocalizationManager = powerbi.extensibility.ILocalizationManager;
 import IColorPalette = powerbi.extensibility.IColorPalette;
+import ISelectionManager = powerbi.extensibility.ISelectionManager;
 import DataView = powerbi.DataView;
 import { IFilterColumnTarget, AdvancedFilter } from "powerbi-models";
 import { FormattingSettingsService } from "powerbi-visuals-utils-formattingmodel";
@@ -39,6 +40,7 @@ export class CalendarPro extends ReactVisual implements IVisual {
   private dataView: DataView | null = null;
   private colorPalette!: IColorPalette;
   private colorHelper!: ColorHelper;
+  private selectionManager!: ISelectionManager;
   private state: VisualState = { settings: {} as dateCardProps };
   private locale = "en-US";
   private currentFilter: dateRange | null = null;
@@ -91,6 +93,19 @@ export class CalendarPro extends ReactVisual implements IVisual {
     this.events = options.host.eventService;
     this.colorPalette = this.visualHost.colorPalette;
     this.colorHelper = new ColorHelper(this.colorPalette);
+
+    // Right-click context menu — Power BI policy 1180.2.5 requires the
+    // visual to surface the host's native context menu on empty space.
+    // Attach to hostElement so it fires across the entire visual area,
+    // including when no data is present.
+    this.selectionManager = this.visualHost.createSelectionManager();
+    this.hostElement.addEventListener("contextmenu", (event: MouseEvent) => {
+      event.preventDefault();
+      this.selectionManager.showContextMenu({}, {
+        x: event.clientX,
+        y: event.clientY,
+      });
+    });
   }
 
   /**

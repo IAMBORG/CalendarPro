@@ -21,14 +21,10 @@ import {
   Increment,
   clampRangeToScope,
   equalRanges,
-  useInputParms,
-} from "../dateutils"; // <-- ADD useInputParms import
+} from "../dateutils";
 import { HelpProvider } from "./helpprovider";
-import { compareAsc, format } from "date-fns";
+import { compareAsc } from "date-fns";
 import { useLocalization } from "../localeutils";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Divider from "@mui/material/Divider";
 
 export default function DateRangeCard(props: dateCardProps) {
   const fallbackRange: dateRange = React.useMemo(
@@ -52,12 +48,6 @@ export default function DateRangeCard(props: dateCardProps) {
   // Use useState to manage the UI's date state, initialized from props.
   const [currentDates, setCurrentDates] = useState<dateRange>(safeDates);
 
-  // State for the context menu: tracks the mouse coordinates when open
-  const [contextMenu, setContextMenu] = useState<{
-    mouseX: number;
-    mouseY: number;
-  } | null>(null);
-
   // keep UI in sync if the Power BI changes dates externally
   useEffect(() => {
     // only replace if it actually changed, to avoid extra renders
@@ -68,14 +58,6 @@ export default function DateRangeCard(props: dateCardProps) {
 
   // Use the localization hook to get the localization manager.
   const localization = useLocalization();
-
-  // Hook to get date utilities for calculation (Needed for context menu content)
-  const input = useInputParms();
-
-  // Memoize date span calculation (used for context menu content)
-  const dateSpan = useMemo(() => {
-    return input(currentDates, safeRangeScope);
-  }, [input, currentDates, safeRangeScope]);
 
   // Memoize the theme creation to avoid re-calculating on every render.
   const theme = useMemo(
@@ -130,34 +112,6 @@ export default function DateRangeCard(props: dateCardProps) {
   // being recreated on every render. This optimizes child component rendering.
   const toggleSlider = useCallback(() => setOpenSlider((prev) => !prev), []);
   const toggleStepOpen = useCallback(() => setStepOpen((prev) => !prev), []);
-
-  // Handler for opening the context menu
-  const handleContextMenu = (event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    setContextMenu(
-      contextMenu === null
-        ? {
-            mouseX: event.clientX + 2,
-            mouseY: event.clientY - 6,
-          }
-        : // If the menu is already open, close it (useful for clicking outside to close)
-          null,
-    );
-  };
-
-  // Handler for closing the context menu
-  const handleClose = useCallback(() => {
-    setContextMenu(null);
-  }, []);
-
-  // Handler to prevent context menu from appearing when the MUI menu is already open
-  const handleMenuContextMenu = (event: React.MouseEvent) => {
-    // ADDED: Prevent context menu on the MUI Menu itself
-    event.preventDefault();
-    event.stopPropagation();
-    handleClose();
-  };
 
   // UI-only updates
   const handlePreviewChange = useCallback(
@@ -229,8 +183,6 @@ export default function DateRangeCard(props: dateCardProps) {
     return null;
   }
 
-  const rangeDescriptionLabel = localization.getDisplayName("Range");
-
   return (
     <ThemeProvider theme={theme}>
       <HelpProvider
@@ -243,7 +195,6 @@ export default function DateRangeCard(props: dateCardProps) {
         <Grid
           container
           sx={{ display: "flex", flexDirection: "column" }}
-          onContextMenu={handleContextMenu}
         >
           <TopRow
             {...props}
@@ -283,40 +234,6 @@ export default function DateRangeCard(props: dateCardProps) {
           </Zoom>
         </Grid>
       </HelpProvider>
-      <Menu
-        open={contextMenu !== null}
-        onClose={handleClose}
-        onClick={handleClose}
-        onContextMenu={handleMenuContextMenu} // <-- Prevent context menu on the MUI Menu itself
-        anchorReference="anchorPosition"
-        anchorPosition={
-          contextMenu !== null
-            ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
-            : undefined
-        }
-        sx={{
-          "& .MuiPaper-root": {
-            maxHeight: "60px", // Fixed/Max height
-            "& .MuiList-root": {
-              paddingTop: "2px", // Reduced top padding
-              paddingBottom: "2px", // Reduced bottom padding
-            },
-          },
-        }}
-      >
-        {/* Range Description (e.g., "Last 30 Days") */}
-        <MenuItem
-          sx={{
-            minHeight: "20px",
-            paddingY: "2px", // Reduced vertical padding
-            fontSize: "0.55rem", // Small font size
-            color: theme.palette.text.primary,
-          }}
-        >
-          {rangeDescriptionLabel}: {dateSpan.string}
-        </MenuItem>
-        {/* Detailed Info (e.g., "From 2023-11-01 to 2023-11-30") */}
-      </Menu>
     </ThemeProvider>
   );
 }

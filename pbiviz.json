@@ -4,15 +4,15 @@
         "displayName": "Calendar Pro",
         "guid": "CalendarProC1C152554D75E8F99A5382304B7E4AC0",
         "visualClassName": "CalendarPro",
-        "version": "2026.5.19.20",
-        "description": "Date Range Selector",
+        "version": "2026.5.20.3",
+        "description": "Calendar Pro — Power BI date range selector with multiple granularities, smart presets, and bookmark sync",
         "supportUrl": "https://github.com/IAMBORG/CalendarPro/issues",
         "gitHubUrl": "https://github.com/IAMBORG/CalendarPro"
     },
     "apiVersion": "5.11.0",
     "author": {
-        "name": "Chuck Nemeth",
-        "email": "chuck.nemeth@hotmail.com"
+        "name": "CMN Engineering",
+        "email": "support@cmnengineering.com"
     },
     "assets": {
         "icon": "assets/icon80.png"

@@ -12,7 +12,6 @@ function DateInput(props: dateCardProps) {
   const {
     showMove,
     stepOpen,
-    openSlider,
     handleClick,
     handleVal,
     dates,
@@ -70,21 +69,19 @@ function DateInput(props: dateCardProps) {
             </Grid>
           </Grow>
 
-          {/* Forward movement button, controlled by the openSlider prop */}
-          {/* <Grow in={openSlider}> */}
-            <Grid >
-              <DateMove
-                dates={dates}
-                stepValue={stepValue}
-                handleVal={handleVal}
-                bf="f"
-                vertical={false}
-                reverse={false}
-                showExpand={showExpand}
-                localization={localization} // Pass localization prop
-              />
-            </Grid>
-          {/* </Grow> */}
+          {/* Forward movement button */}
+          <Grid>
+            <DateMove
+              dates={dates}
+              stepValue={stepValue}
+              handleVal={handleVal}
+              bf="f"
+              vertical={false}
+              reverse={false}
+              showExpand={showExpand}
+              localization={localization} // Pass localization prop
+            />
+          </Grid>
         </Grid>
       )}
     </>
