@@ -95,9 +95,11 @@ export class CalendarPro extends ReactVisual implements IVisual {
     this.colorHelper = new ColorHelper(this.colorPalette);
 
     // Right-click context menu — Power BI policy 1180.2.5 requires the
-    // visual to surface the host's native context menu on empty space.
-    // Attach to hostElement so it fires across the entire visual area,
-    // including when no data is present.
+    // visual to surface the host's native context menu on empty space
+    // within a data-bound visual. Attaching to hostElement catches
+    // events bubbling up from React-rendered children. The listener is
+    // cleaned up automatically when Power BI removes hostElement from
+    // the DOM, so no destroy() method is required.
     this.selectionManager = this.visualHost.createSelectionManager();
     this.hostElement.addEventListener("contextmenu", (event: MouseEvent) => {
       event.preventDefault();
