@@ -48,8 +48,6 @@ export function SetTheme({
         styleOverrides: {
           // Name of the slot
           badge: {
-            // Some CSS
-            // fontSize: ".5rem",
             textTransform: "uppercase",
           },
         },

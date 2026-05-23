@@ -44,14 +44,12 @@ class styleSettings extends FormattingSettingsCard {
     descriptionKey: "style_themeFont_description",
     displayNameKey: "style_themeFont_displayName",
     value: defaultSettings.styleSettings.themeFont,
-    // value: "wf_standard-font, helvetica, arial, sans-serif",
   });
   fontFamily = new formattingSettings.FontPicker({
     name: "fontFamily",
     descriptionKey: "style_fontFamily_description",
     displayNameKey: "style_fontFamily_displayName",
     value: defaultSettings.styleSettings.fontFamily,
-    // value: "wf_standard-font, helvetica, arial, sans-serif",
   });
   fontSize = new formattingSettings.NumUpDown({
     name: "fontSize",
@@ -79,8 +77,6 @@ class styleSettings extends FormattingSettingsCard {
   });
   fontColor = new formattingSettings.ColorPicker({
     name: "fontColor",
-    // displayNameKey: "style_fontColor_displayName",
-    // descriptionKey: "style_fontColor_description",
     value: { value: defaultSettings.styleSettings.fontColor },
   });
   themeMode = new formattingSettings.AutoDropdown({
@@ -113,7 +109,6 @@ class styleSettings extends FormattingSettingsCard {
       fontSize: this.fontSize,
       bold: this.fontBold, //optional
       italic: this.fontItalic, //optional
-      // underline: this.fontUnderline,  //optional
     });
 
   slices: Array<FormattingSettingsSlice> = [
@@ -203,7 +198,6 @@ class timelineSettings extends FormattingSettingsGroup {
   descriptionKey = "timeline_description";
   analyticsPane: boolean = false;
   uid: string = "timelineUid";
-  // topLevelSlice: formattingSettings.SimpleSlice = this.enableSlider;
 
   slices: Array<FormattingSettingsSlice> = [
     this.enableSlider,
