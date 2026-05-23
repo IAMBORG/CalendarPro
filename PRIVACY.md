@@ -6,7 +6,7 @@
 
 This Privacy Policy describes how the **Calendar Pro** Power BI custom visual
 (the "Visual") handles data. This Visual is developed and distributed by
-Chuck Nemeth.
+CMN Engineering.
 
 We are committed to protecting your privacy. This Privacy Policy explains, in
 plain language, what data the Visual processes and does not process.
