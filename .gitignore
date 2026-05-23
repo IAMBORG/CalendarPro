@@ -25,3 +25,18 @@ Thumbs.db
 
 # scratch / WIP copies
 /src/components/*copy.tsx
+
+# environment files (do not commit secrets)
+.env
+.env.*
+
+# lint and dependency caches
+.eslintcache
+.npm/
+
+# test coverage output
+coverage/
+
+# editor swap files
+*.swp
+*~
