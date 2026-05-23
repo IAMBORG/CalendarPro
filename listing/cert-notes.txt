@@ -1,4 +1,4 @@
-Calendar Pro is a free, MIT-licensed Power BI custom visual that provides a date range selector with multiple granularities (day, week, pay period, month, quarter, year) and smart preset ranges that auto-apply on report open.
+Calendar Pro Plus is a free, MIT-licensed Power BI custom visual that provides a date range selector with multiple granularities (day, week, pay period, month, quarter, year) and smart preset ranges that auto-apply on report open.
 
 SOURCE CODE
 https://github.com/IAMBORG/CalendarPro
@@ -6,7 +6,7 @@ Public repository, MIT license, no credentials required for review.
 
 TESTING THE VISUAL
 1. Open CalendarPro_Demo.pbix in Power BI Desktop. The dataset is synthetic Contoso-style fake data — no real customer information.
-2. The Calendar Pro visual is bound to the "Date" column of the Sales table.
+2. The Calendar Pro Plus visual is bound to the "Date" column of the Sales table.
 3. Use the date input pickers, navigation arrows, or step granularity pills (D / W / M / Q / Y) to filter the report.
 4. All other visuals on the page (pie charts, matrix, line chart) cross-filter in response to the date range.
 
