@@ -21,10 +21,14 @@ Substantially rewritten and extended for AppSource certification.
 
 ## Installation
 
-### From AppSource (once certified)
+### From Microsoft Marketplace
 
-In Power BI Desktop, open the **Visualizations** pane, click the ellipsis, choose
-**Get more visuals**, and search for "Calendar Pro".
+Install directly from the Microsoft Marketplace listing:
+
+[https://marketplace.microsoft.com/en-us/product/power-bi-visuals/chucknemeth.calendar-pro-pbi](https://marketplace.microsoft.com/en-us/product/power-bi-visuals/chucknemeth.calendar-pro-pbi)
+
+Alternatively, in Power BI Desktop, open the **Visualizations** pane, click
+the ellipsis, choose **Get more visuals**, and search for "Calendar Pro Plus".
 
 ### From a .pbiviz file
 
